@@ -37,4 +37,4 @@ public class CalculateGCD {
     public static void main(String[] args) {
         System.out.print(findGcd(97,43));
     }
-}
+} 
