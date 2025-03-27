@@ -1,33 +1,22 @@
 // Problem statement
 
 // Given a positive integer n, 
-// count the number of digits in n that 
-// divide n evenly (i.e., without leaving a remainder). 
-// Return the total number of such digits.
+// The task is to find the value of Σi F(i) 
+// where i is from 1 to n and function F(i) 
+// is defined as the sum of all divisors of i.
 
-// A digit d of n divides n evenly 
-// if the remainder when n is divided by d is 0 (n % d == 0).
-// Digits of n should be checked individually. 
-// If a digit is 0, it should be ignored because division by 0 is undefined.
+class SumOfDivisorsV2 {
+    public static int sumOfDivisors(int n) {
 
-class EvenlyDivides {
-    public static int evenlyDivides(int n) {
-        // code here
-        int num = n;              
-        int numberOfTimes = (int) Math.log10(n) + 1;
-        int count = 0;
-        for(int i=0 ; i<numberOfTimes ; i++){
-            int rem = num % 10;   
-            if(rem != 0 && n%rem == 0){
-                count+=1;
-            }
-            num/=10;
+        int sumOfDivisor = 0;
+        for (int i = 1; i <= n; i++) {
+            sumOfDivisor += i; 
         }
-        return count;
+        return sumOfDivisor;
     }
 
     public static void main(String[] args) {
 
-        System.out.println("Sum of divisors is : "+ evenlyDivides(2446));
+        System.out.println("Sum of divisors is : "+ sumOfDivisors(6));
     }
 }
